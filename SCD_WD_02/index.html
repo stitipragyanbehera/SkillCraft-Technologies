@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="stopwatch">
+            <div class="gradient-overlay"></div>
+            <h1>Stopwatch</h1>
+            <div id="display" aria-live="polite">00:00:00.00</div>
+            <div class="buttons">
+                <button id="startPause" aria-label="Start">
+                    <i data-lucide="play"></i>
+                    <span>Start</span>
+                </button>
+                <button id="reset" aria-label="Reset">
+                    <i data-lucide="rotate-ccw"></i>
+                    <span>Reset</span>
+                </button>
+                <button id="lap" aria-label="Lap" disabled>
+                    <i data-lucide="flag"></i>
+                    <span>Lap</span>
+                </button>
+            </div>
+            <div class="laps-container">
+                <h2>Laps</h2>
+                <div id="laps">
+                    <p class="no-laps">No laps recorded</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

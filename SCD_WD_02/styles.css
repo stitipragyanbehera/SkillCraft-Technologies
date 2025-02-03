@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #3b82f6, #8b5cf6, #ec4899);
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.stopwatch {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(34, 211, 238, 0.2), rgba(59, 130, 246, 0.2));
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.3; }
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+#display {
+    font-size: 3rem;
+    font-family: monospace;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+}
+
+#display:hover {
+    transform: scale(1.05);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button i {
+    margin-right: 0.5rem;
+}
+
+#startPause {
+    background: linear-gradient(to right, #34d399, #3b82f6);
+}
+
+#startPause.running {
+    background: linear-gradient(to right, #fbbf24, #ef4444);
+}
+
+#reset {
+    background: linear-gradient(to right, #8b5cf6, #ec4899);
+}
+
+#lap {
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+}
+
+.laps-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    max-height: 200px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 10;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+#laps {
+    color: white;
+}
+
+.lap-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.no-laps {
+    color: rgba(255, 255, 255, 0.7);
+}
